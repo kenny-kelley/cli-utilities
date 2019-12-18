@@ -3,12 +3,12 @@ import sys
 import random
 import os
 
-'''
+"""
 Author: Kenny Kelley
 Email: kelley.796@osu.edu
 Date: 2019-18-12
 
-'''
+"""
 
 
 def do_argparse():
@@ -20,11 +20,8 @@ def do_argparse():
 
 
 def main():
-
     args = do_argparse()
-
-    seed = os.urandom(args.seed_size);
-    generator = random.seed(a=seed, version=2)
+    random.seed(a=os.urandom(args.seed_size), version=2)
     print(random.randrange(args.start, args.stop))
 
 
