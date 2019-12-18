@@ -9,7 +9,7 @@ Date: 2019-17-12
 
 
 def do_argparse():
-    arg_parser =  argparse.ArgumentParser(description='Prints the number of unique strings '
+    arg_parser = argparse.ArgumentParser(description='Prints the number of unique strings '
         + 'separated by newlines in a file.')
     arg_parser.add_argument('file', help='path to a valid file')
     return arg_parser.parse_args()
