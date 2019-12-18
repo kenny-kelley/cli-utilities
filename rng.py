@@ -5,7 +5,6 @@ import os
 
 """
 Author: Kenny Kelley
-Email: kelley.796@osu.edu
 Date: 2019-18-12
 
 """
