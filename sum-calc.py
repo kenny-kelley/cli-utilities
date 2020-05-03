@@ -9,27 +9,45 @@ Date: 2020-04-22
 
 def do_argparse():
     parser = argparse.ArgumentParser(description='A calculator to sum up decimal, hexadecimal, and binary numbers.', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('-i', '--input_mode', help='sets the mode of how values without prefixes should be interpretted', choices=['dec', 'hex', 'bin'], default='dec')
-    parser.add_argument('-o', '--output_mode', help='sets the mode of the output value', choices=['dec', 'hex', 'bin'], default='dec')
-    parser.add_argument('nums', metavar='num', help='a number to include in the sum', nargs='+')
+    parser.add_argument('-o', '--output_mode', help='sets the mode of the output value', choices=['hex', 'bin', 'dec'], default='hex')
+    parser.add_argument('-d', '--calc_diff', help='including this flag makes the calculator find the difference rather than the sum', action='store_true')
+    parser.add_argument('nums', metavar='num', help='a well formed number to include in the calculation\n(Ex: \"0x2a\" or \"0b101010\" or \"42\"', nargs='+')
     return parser.parse_args()
+
+
+def add(a, b):
+    if b.lower().startswith('0x'):
+        a += int(b, 16);
+    elif b.lower().startswith('0b'):
+        a += int(b, 2)
+    else:
+        a += int(b)
+    return a
+
+
+def subtract(a, b):
+    if b.lower().startswith('0x'):
+        a -= int(b, 16);
+    elif b.lower().startswith('0b'):
+        a -= int(b, 2)
+    else:
+        a -= int(b)
+    return a
 
 
 def main():
 
     args = do_argparse()
     teh_sum = 0
-    for i in args.nums:
-        if i.startswith('0x') or i.startswith('0X'):
-            teh_sum += int(i, 16);
-        elif i.startswith('0b') or i.startswith('0B'):
-            teh_sum += int(i, 2)
-        else:
-            teh_sum += int(i)
-            # TODO: consider input mode
-
-    # TODO: find solution for inputing negative hex and bin values, parse_intermixed_args(...) and
-    #   parse_known_args(...) are the best leads to look into
+    if args.calc_diff:
+        for i in args.nums:
+            if args.nums.index(i) == 0:
+                teh_sum = add(teh_sum, i)
+            else:
+                teh_sum = subtract(teh_sum, i)
+    else:
+        for i in args.nums:
+            teh_sum = add(teh_sum, i)
 
     if args.output_mode == 'hex':
         print(hex(teh_sum))
