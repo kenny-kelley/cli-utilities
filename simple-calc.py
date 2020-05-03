@@ -15,6 +15,8 @@ def do_argparse():
     return parser.parse_args()
 
 
+# Parameters:
+#   'a' is int and 'b'' is a str
 def add(a, b):
     if b.lower().startswith('0x'):
         a += int(b, 16);
@@ -25,6 +27,8 @@ def add(a, b):
     return a
 
 
+# Parameters:
+#   'a' is int and 'b'' is a str
 def subtract(a, b):
     if b.lower().startswith('0x'):
         a -= int(b, 16);
