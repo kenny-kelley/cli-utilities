@@ -1,4 +1,4 @@
-﻿# CLI utilities in Python
+﻿# Command-line interface utilities in Python
 This is a repository containing useful Python scripts made as I have some need of such a utility.
 
 As of editing this README, I am running these with Python 3.6.9 (the version which is standard on Ubuntu LTS 18.04). It should work on any newer version of Python 3.
