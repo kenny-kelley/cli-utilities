@@ -10,9 +10,9 @@ Date: 2019-12-17
 
 
 def do_argparse():
-    parser = argparse.ArgumentParser(description='Prints the number of unique strings '
-        + 'separated by newlines in a file.')
-    parser.add_argument('file', help='path to a valid file')
+    parser = argparse.ArgumentParser(description="Prints the number of unique strings "
+        + "separated by newlines in a file.")
+    parser.add_argument("file", help="path to a valid file")
     return parser.parse_args()
 
 
@@ -21,13 +21,13 @@ def main():
     args = do_argparse()
 
     working_set = set()
-    with open(args.file, 'r') as in_file:
+    with open(args.file, "r") as in_file:
         for line in in_file:
-            if line != '\n': # Exclude empty lines
+            if line != "\n": # Exclude empty lines
                 working_set.add(line)
 
     print(len(working_set)) # Python accesses lengths for built-in types in constant time, bite me
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

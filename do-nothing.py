@@ -10,7 +10,7 @@ Date: 2019-12-18
 
 
 def do_argparse():
-    parser = argparse.ArgumentParser(description='Does absolutely nothing.')
+    parser = argparse.ArgumentParser(description="Does absolutely nothing.")
     return parser.parse_args()
 
 
@@ -19,5 +19,5 @@ def main():
     # !TODO
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
