@@ -131,3 +131,4 @@ dmypy.json
 # Begin stuff added for repo
 test/
 temp/
+.vscode/
