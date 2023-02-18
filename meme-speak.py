@@ -16,9 +16,7 @@ def do_argparse():
 
 
 def memeify(my_str):
-    result = ""
-    for char in my_str:
-        ""
+    return my_str
 
 
 def main():
