@@ -23,7 +23,7 @@ def do_argparse():
 def main():
     args = do_argparse()
     random.seed(a=os.urandom(args.seed_size), version=2)
-    print(random.randrange(args.lower_bound, args.upper_bound))
+    print(random.randint(args.lower_bound, args.upper_bound))
 
 
 if __name__ == "__main__":
