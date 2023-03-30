@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 import argparse
-import sys
-import random
 import os
+import random
+import sys
 
 """
 Author: Kenny Kelley
