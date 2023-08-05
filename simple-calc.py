@@ -2,12 +2,6 @@
 
 import argparse
 
-"""
-Author: Kenny Kelley
-Date: 2023-02-18
-
-"""
-
 
 def do_argparse() -> argparse.Namespace:
     """Parses, validates, and provides feedback on command line arguments."""

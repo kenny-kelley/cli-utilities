@@ -3,12 +3,6 @@
 import argparse
 import random
 
-"""
-Author: Kenny Kelley
-Date: 2023-02-18
-
-"""
-
 
 def do_argparse():
     parser = argparse.ArgumentParser(description="wHat Do yOU tHiNk iT DOes?")

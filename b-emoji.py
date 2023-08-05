@@ -3,13 +3,6 @@
 import argparse
 import re
 
-"""
-Author: Kenny Kelley
-Date: 2023-08-05
-
-"""
-
-
 B_EMOJI = "\U0001f171\ufe0f "
 
 

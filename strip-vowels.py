@@ -3,12 +3,6 @@
 import argparse
 import re
 
-"""
-Author: Kenny Kelley
-Date: 2023-08-05
-
-"""
-
 
 def do_argparse():
     parser = argparse.ArgumentParser(

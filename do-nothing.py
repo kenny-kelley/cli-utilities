@@ -2,12 +2,6 @@
 
 import argparse
 
-"""
-Author: Kenny Kelley
-Date: 2019-12-18
-
-"""
-
 
 def do_argparse():
     parser = argparse.ArgumentParser(description="Does absolutely nothing.")
