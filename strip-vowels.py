@@ -13,8 +13,12 @@ VOWELS = ("a", "e", "i", "o", "u")
 
 
 def do_argparse():
-    parser = argparse.ArgumentParser(description="Removes all of the vowels from a given string.")
-    parser.add_argument("input_str", help="a string you would like to have the vowels removed from")
+    parser = argparse.ArgumentParser(
+        description="Removes all of the vowels from a given string."
+    )
+    parser.add_argument(
+        "input_str", help="a string you would like to have the vowels removed from"
+    )
     return parser.parse_args()
 
 

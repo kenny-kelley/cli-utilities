@@ -11,10 +11,29 @@ Date: 2023-02-18
 
 def do_argparse() -> argparse.Namespace:
     """Parses, validates, and provides feedback on command line arguments."""
-    parser = argparse.ArgumentParser(description="A calculator to sum up binary, octal, decimal, and hexadecimal integers.", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument("-o", "--output_base", help="sets the base of the output value", choices=["bin", "oct", "dec", "hex"], default="hex")
-    parser.add_argument("-d", "--calc_diff", help="including this flag makes the calculator find the difference rather than the sum", action="store_true")
-    parser.add_argument("nums", metavar="num", help="a well formed number to include in the calculation (Ex: \"0b101010\" or \"0o777\" or \"42\" or \"0x2a\")", nargs="+")
+    parser = argparse.ArgumentParser(
+        description="A calculator to sum up binary, octal, decimal, and hexadecimal integers.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    parser.add_argument(
+        "-o",
+        "--output_base",
+        help="sets the base of the output value",
+        choices=["bin", "oct", "dec", "hex"],
+        default="hex",
+    )
+    parser.add_argument(
+        "-d",
+        "--calc_diff",
+        help="including this flag makes the calculator find the difference rather than the sum",
+        action="store_true",
+    )
+    parser.add_argument(
+        "nums",
+        metavar="num",
+        help='a well formed number to include in the calculation (Ex: "0b101010" or "0o777" or "42" or "0x2a")',
+        nargs="+",
+    )
     return parser.parse_args()
 
 
@@ -25,7 +44,7 @@ def convert_str_to_int(num: str) -> int:
     elif num.lower().startswith("0o"):
         return int(num, 8)
     elif num.lower().startswith("0x"):
-        return int(num, 16);
+        return int(num, 16)
     else:
         return int(num)
 
