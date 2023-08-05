@@ -27,9 +27,8 @@ def main():
             if line != "\n":  # Exclude empty lines
                 working_set.add(line)
 
-    print(
-        len(working_set)
-    )  # Python accesses lengths for built-in types in constant time, bite me
+    # Python accesses lengths for built-in types in constant time, bite me
+    print(len(working_set))
 
 
 if __name__ == "__main__":
