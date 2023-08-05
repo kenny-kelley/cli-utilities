@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+import re
 
 """
 Author: Kenny Kelley
@@ -9,30 +10,22 @@ Date: 2020-08-31
 """
 
 
-VOWELS = ("a", "e", "i", "o", "u")
-
-
 def do_argparse():
     parser = argparse.ArgumentParser(
-        description="Removes all of the vowels from a given string."
+        description="Removes all of the vowels from the given strings."
     )
     parser.add_argument(
-        "input_str", help="a string you would like to have the vowels removed from"
+        "strings",
+        metavar="string",
+        help="a string you would like to have the vowels removed from",
+        nargs="+",
     )
     return parser.parse_args()
 
 
-def strip_vowels(input_str):
-    output_str = ""
-    for c in input_str:
-        if c.lower() not in VOWELS:
-            output_str += c
-    return output_str
-
-
 def main():
     args = do_argparse()
-    print(strip_vowels(args.input_str))
+    print(re.sub("[aeiouAEIOU]", "", " ".join(args.strings)))
 
 
 if __name__ == "__main__":
