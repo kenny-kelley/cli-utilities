@@ -4,7 +4,7 @@ import argparse
 import random
 
 
-def do_argparse():
+def do_argparse() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="wHat Do yOU tHiNk iT DOes?")
     parser.add_argument(
         "strings",
@@ -35,7 +35,7 @@ def memeify(my_str: str) -> str:
     return "".join(char_list)
 
 
-def main():
+def main() -> None:
     args = do_argparse()
     print(memeify(" ".join(args.strings)))
 
