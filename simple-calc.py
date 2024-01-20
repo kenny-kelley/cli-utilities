@@ -11,14 +11,14 @@ def do_argparse() -> argparse.Namespace:
     )
     parser.add_argument(
         "-o",
-        "--output_base",
+        "--output-base",
         help="sets the base of the output value",
         choices=["bin", "oct", "dec", "hex"],
         default="hex",
     )
     parser.add_argument(
         "-d",
-        "--calc_diff",
+        "--calc-diff",
         help="including this flag makes the calculator find the difference rather than the sum",
         action="store_true",
     )

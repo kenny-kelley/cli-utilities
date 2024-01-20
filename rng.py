@@ -13,20 +13,20 @@ def do_argparse():
     )
     parser.add_argument(
         "-a",
-        "--lower_bound",
+        "--lower-bound",
         help="inclusive lower bound for RNG pool",
         type=int,
         default=0,
     )
     parser.add_argument(
         "-b",
-        "--upper_bound",
+        "--upper-bound",
         help="inclusive upper bound for RNG pool",
         type=int,
         default=sys.maxsize,
     )
     parser.add_argument(
-        "--seed_size",
+        "--seed-size",
         help="size in bytes of the seed the OS generates via os.urandom()",
         type=int,
         default=1024,
