@@ -5,8 +5,7 @@ import argparse
 
 def do_argparse():
     parser = argparse.ArgumentParser(
-        description="Prints the number of unique strings "
-        + "separated by newlines in a file."
+        description="Prints the number of unique strings separated by newlines in a file."
     )
     parser.add_argument("file", help="path to a valid file")
     return parser.parse_args()
