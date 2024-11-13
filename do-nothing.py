@@ -9,7 +9,7 @@ def do_argparse():
 
 
 def main():
-    args = do_argparse()
+    do_argparse()
     # !TODO
 
 
